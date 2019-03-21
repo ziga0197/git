@@ -16,11 +16,8 @@
     <input type="text" id="txtName" >
     <label for="">Lop</label>
     <input type="text" id="txtClass" >
-    <label for="">Truong</label>
-    <input type="text" id="txtSchool" >
-    <label for="">Dan toc</label>
-    <input type="text" id="txtKind" >
-    <button onclick="showInfo()" class="btn btn-primary">Show info</button>
+    
+    <button onclick="showInfo()" class="btn btn-danger">Show info</button>
   </div>
 
 </body>
@@ -28,14 +25,11 @@
   function showInfo() {
     var name = document.getElementById('txtName').value;
     var myclass = document.getElementById('txtClass').value;
-    var school = document.getElementById('txtSchool').value;
-    var kind = document.getElementById('txtKind').value;
-
+    
     alert(`
     Name : ${name},
     Class : ${myclass},
-    School : ${school},
-    Kind : ${kind},
+   
     `)
   }
 </script>
