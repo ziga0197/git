@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 03, 2019 lúc 06:13 PM
+-- Thời gian đã tạo: Th4 03, 2019 lúc 06:49 PM
 -- Phiên bản máy phục vụ: 10.1.37-MariaDB
 -- Phiên bản PHP: 7.3.0
 
@@ -130,10 +130,19 @@ CREATE TABLE `products` (
   `promotion_price` float DEFAULT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `unit` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `new` tinyint(4) DEFAULT '0',
+  `new` tinyint(4) DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `id_type`, `description`, `unit_price`, `promotion_price`, `image`, `unit`, `new`, `created_at`, `updated_at`) VALUES
+(65, 'Bánh Ngọt A1', 21, '<p>1234</p>', 150000, 120000, 'wAqP_images.jpg', 'cái', 1, '2019-04-03 16:42:38', '2019-04-03 16:42:38'),
+(66, 'Ngọt ab1', 21, '<p>1</p>', 1, NULL, 'tPzS_images.jpg', 'cái', 0, '2019-04-03 16:45:06', '2019-04-03 16:45:56'),
+(67, 'Bánh Ngọt A2', 21, '<p>1</p>', 1, NULL, '', 'cái', 1, '2019-04-03 16:47:20', '2019-04-03 16:47:37');
 
 -- --------------------------------------------------------
 
@@ -154,9 +163,7 @@ CREATE TABLE `slide` (
 --
 
 INSERT INTO `slide` (`id`, `link`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'abc', 'eQtW_tải xuống (3).jpg', NULL, '2019-03-31 14:04:14'),
-(4, '', 'banner4.jpg', NULL, NULL),
-(5, 'bbb', 'sTqY_tải xuống (4).jpg', '2019-03-31 14:03:20', '2019-03-31 14:04:01');
+(6, 'a', 'IRtr_yukisu-banner-banh-su-mem.jpg', '2019-04-03 16:36:27', '2019-04-03 16:36:27');
 
 -- --------------------------------------------------------
 
@@ -172,6 +179,13 @@ CREATE TABLE `type_products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `type_products`
+--
+
+INSERT INTO `type_products` (`id`, `name`, `description`, `image`, `created_at`, `updated_at`) VALUES
+(21, 'Bánh Ngọt', 'a', 'oh7Y_images.jpg', '2019-04-03 16:41:21', '2019-04-03 16:41:21');
 
 -- --------------------------------------------------------
 
@@ -198,7 +212,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `quyen`, `password`, `phone`, `address`, `remember_token`, `created_at`, `updated_at`) VALUES
 (6, 'Hương Hương 12', 'huonghuong08.php@gmail.com', 1, '$2y$10$rGY4KT6ZSMmLnxIbmTXrsu2xdgRxm8x0UTwCyYCAzrJ320kYheSRq', '1234567', 'Hoàng Diệu 22', NULL, '2017-03-23 07:17:33', '2019-03-31 08:07:27'),
-(8, 'dat', 'nguyentiendat2st96@gmail.com', 1, '$2y$10$Rv0l.gQOv7gtts5iStMT5.Ta584dO/ppzk3Bv7QcyrbMN2z0b8G0W', '1234567', 'Street Address', 'kmQpyWEbp2P4HtFXUvI54VzbVvnN3EEMCr6shGbMZhsDHRzTXEtX4wLEdHpZ', '2019-03-31 09:21:25', '2019-03-31 11:24:25');
+(8, 'dat', 'nguyentiendat2st96@gmail.com', 1, '$2y$10$Rv0l.gQOv7gtts5iStMT5.Ta584dO/ppzk3Bv7QcyrbMN2z0b8G0W', '1234567', 'Street Address', 'Wjse8zETwbhMNQV5yGxI0c5mgaS0BvMRdO2o9beEmZXRH08PWMdhliP8jUxo', '2019-03-31 09:21:25', '2019-03-31 11:24:25');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -302,19 +316,19 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT cho bảng `slide`
 --
 ALTER TABLE `slide`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `type_products`
 --
 ALTER TABLE `type_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
